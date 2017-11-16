@@ -1,0 +1,33 @@
+<div class="row" >
+    <form class="form-inline">
+    <div class="form-group">
+        <label for="orderItem">Order By</label>
+        <select  class="form-control" id="orderItem" ng-model="orderList">
+           <option selected value="empName">Employee Name</option>
+           <option value="age">Age</option>
+        </select>
+        <label for="filterTxt">Filter Emp Id</label>
+        <input type="text" class="form-control" id="filterTxt" ng-model="filterTxt" placeholder="Enter Employee Id">
+    </div>
+    </form>
+    <div>
+    <h1><strong>List of Current Employees</strong></h1>
+    <button class="btn btn-primary" style="width:200px; float: right;" ng-click="addEmp()"><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-user"></i> &nbsp;Add New Employee</button>
+    <table class="table table-striped">
+        <tr>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Birth Date</th>
+            <th ng-model="age">Age</th>
+            <th>Action</th>
+        </tr>
+        <tr ng-repeat="d in data | orderBy: orderList | filter:{'empId' : filterTxt}">
+            <td>{{d.empId}}</td>
+            <td>{{d.empName}}</td>
+            <td>{{d.bDate | date:'MM/dd/yyyy'}}</td>
+            <td ng-model="age">{{calcDate(d.bDate)}}</td>
+            <td><button class="btn btn-warning" ng-click="editEmp($index)"><i class="glyphicon glyphicon-pencil"></i></button><button style="margin-left: 10px;" class="btn btn-danger" ng-click="deleteEmp($index)" ><i class="glyphicon glyphicon-remove"></i></button></td>
+        </tr>
+    </table>
+    </div>
+</div>

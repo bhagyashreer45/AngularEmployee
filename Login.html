@@ -1,0 +1,24 @@
+<div class="row">
+<div class="wrapper"  ng-controller="loginCtrl">
+    <form class="form-signin" name="myForm" novalidate>
+        <h2 class="form-signin-heading">Employee Login</h2>
+        <input type="email" class="form-control"  ng-model="uName" name="uName" placeholder="Email Address" required />
+        <div ng-show="myForm.$dirty && myForm.$invalid ">
+            <span ng-show="myForm.uName.$error.required">The Field is Required!</span>
+            <span ng-show="myForm.$error.email">Please Enter Valid User Name!</span>
+        </div>
+        <input type="password" class="form-control" ng-model="pswd" name="pswd" placeholder="Password" required minlength="8" ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@!%*#?&])[A-Za-z\d$@$!%*#?&]/"/>
+        <div ng-show="myForm.$dirty && myForm.$invalid">
+            <span ng-show="myForm.pswd.$error.required">The Field is Required!</span>
+            <span ng-show="myForm.pswd.$error.minlength">Password Length should be 8 or more</span><br>
+            <span ng-show="myForm.pswd.$error.pattern">Password should contain at least 1 number,1 character & 1 special character!</span>
+        </div>
+        <label class="checkbox" >
+            <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+        </label>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="checkUser()">Login</button>
+        <span ng-model="err"></span>
+    </form>
+</div>
+</div>

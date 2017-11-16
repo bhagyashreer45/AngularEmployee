@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="container">
+        <div id="empBox" style=" margin-top:50px" class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">Employee Details</div>
+                </div>
+                <div class="panel-body" >
+                    <form>
+                        <form  class="form-horizontal">
+                            <div class="form-group required">
+                                <label for="eid" class="control-label col-md-4  requiredField"> Employee Id<span class="asteriskField">*</span> </label>
+                                <div class="controls col-md-8 ">
+                                    <input class="input-md  textinput textInput form-control" id="eid" ng-model="user.empId" maxlength="30" name="eid" placeholder="Employee Id" style="margin-bottom: 10px" type="text" />
+                                </div>
+                            </div>
+                            <div class="form-group required">
+                                <label for="ename" class="control-label col-md-4  requiredField"> Employee Name<span class="asteriskField">*</span> </label>
+                                <div class="controls col-md-8 ">
+                                    <input class="input-md textinput textInput form-control" id="ename" ng-model="user.empName" placeholder="Employee Name" style="margin-bottom: 10px" type="text" />
+                                </div>
+                            </div>
+                            <div class="form-group required">
+                                <label for="bdate" class="control-label col-md-4  requiredField">Birth Date<span class="asteriskField">*</span> </label>
+                                <div class="controls col-md-8 ">
+                                    <input class="input-md textinput textInput form-control" id="bdate" ng-model="user.bDate" placeholder="Select Birth Date" style="margin-bottom: 10px; height:30px;" type="date" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="aab controls col-md-4 "></div>
+                                <div class="controls col-md-8 ">
+                                    <input type="submit" ng-model="btnAdd" name="btnAdd" ng-click="addData()" value="Add" class="btn btn-primary btn btn-info" style="width: 100px;"/>
+                                    <input type="submit" ng-model="btnUpdate" name="btnupdate" ng-click="updateData()" value="Update" class="btn btn-primary btn btn-primary" style="width: 100px;"/>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
